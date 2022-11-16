@@ -45,7 +45,7 @@ const ScrollCategory = () => {
         contentContainerStyle={{ paddinTop: 50 }}
         scrollEventThrottle={16}
         keyExtractor={(item) => item.id}
-        renderItem={({ item, index }) => {
+        renderItem={({ item }) => {
           return (
             <View
               style={

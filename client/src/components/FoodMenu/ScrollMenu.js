@@ -1,6 +1,7 @@
 import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
 import { styles } from './stylesScrollMenu';
 import React from 'react';
+import Counter from '../Counter/Counter';
 
 const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity }) => {
   const menu = [
@@ -60,23 +61,7 @@ const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity }) => {
                 <Text style={styles.nameText}>{item.name}</Text>
                 <Text style={styles.valueText}>{item.precio}</Text>
               </View>
-              <View style={styles.containerQuantity}>
-                <TouchableOpacity
-                  onPress={onPressPlus}
-                  style={styles.increaseBtn}
-                >
-                  <Text style={styles.plusText}>+</Text>
-                </TouchableOpacity>
-                <View style={styles.containerValueQuantity}>
-                  <Text style={styles.valueQuantity}>{valueQuantity}</Text>
-                </View>
-                <TouchableOpacity
-                  onPress={onPressMinus}
-                  style={styles.decreaseBtn}
-                >
-                  <Text style={styles.minusText}>-</Text>
-                </TouchableOpacity>
-              </View>
+              <Counter/>
             </View>
           </View>
         );

@@ -9,19 +9,7 @@ const FoodMenu = ({ navigation }) => {
   let textInputPlaceHolderColor = '#FFFFFF';
   let hamburgerMenu = require('../../../assets/FoodMenu/HamburgerMenu.png');
   let chimekYoonIcon = require('../../../assets/FoodMenu/ChimekYoonIcon.png');
-  const [valueQuantity, setValueQuantity] = useState(0);
-
-  const onPressPlus = () => {
-    setValueQuantity(valueQuantity + 1);
-  };
-
-  const onPressMinus = () => {
-    if (valueQuantity <= 0) {
-    } else if (valueQuantity > 0) {
-      setValueQuantity(valueQuantity - 1);
-    } else {
-    }
-  };
+ 
   return (
     <SafeAreaView style={styles.menuContainer}>
       <Image style={styles.hamburgerMenu} source={hamburgerMenu} />
@@ -39,12 +27,8 @@ const FoodMenu = ({ navigation }) => {
         <Text style={styles.subTitle}>Categorías</Text>
       </View>
       <ScrollCategory />
-      <ScrollMenu
-        onPressPlus={onPressPlus}
-        onPressMinus={onPressMinus}
-        valueQuantity={valueQuantity}
-      />
-    </SafeAreaView>
+      <ScrollMenu/>
+  </SafeAreaView>
   );
 };
 
