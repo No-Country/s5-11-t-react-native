@@ -1,7 +1,7 @@
 import {React, useState} from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { styles } from './stylesCounter';
-const Counter = () => {
+const CounterHorizontal = () => {
 
     const [valueQuantity, setValueQuantity] = useState(0);
 
@@ -18,25 +18,25 @@ const Counter = () => {
     };
 
     return (
-       <View style={styles.containerQuantity}>
-                <TouchableOpacity
-                  onPress={onPressPlus}
-                  style={styles.increaseBtn}
-                >
-                  <Text style={styles.plusText}>+</Text>
-                </TouchableOpacity>
-                <View style={styles.containerValueQuantity}>
-                  <Text style={styles.valueQuantity}>{valueQuantity}</Text>
-                </View>
+       <View style={styles.containerQuantityHorizontal}>
                 <TouchableOpacity
                   onPress={onPressMinus}
                   style={styles.decreaseBtn}
                 >
                   <Text style={styles.minusText}>-</Text>
                 </TouchableOpacity>
+                <View style={styles.containerValueQuantityHorizontal}>
+                  <Text style={styles.valueQuantityHorizontal}>{valueQuantity}</Text>
+                </View>
+                <TouchableOpacity
+                  onPress={onPressPlus}
+                  style={styles.increaseBtn}
+                >
+                  <Text style={styles.plusText}>+</Text>
+                </TouchableOpacity>
+                
         </View>
     );
 }
 
-export default Counter;
-
+export default CounterHorizontal;
