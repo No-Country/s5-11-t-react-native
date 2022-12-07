@@ -6,7 +6,7 @@ const DB_URI = process.env.DATABASE_URI
 
 const connectDB = () => {
   const db = mongoose.connection
-  mongoose.connect('mongodb://mongo:oBxFqZRPPA5cGjCiUZn8@containers-us-west-146.railway.app:6961', {
+  mongoose.connect(DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

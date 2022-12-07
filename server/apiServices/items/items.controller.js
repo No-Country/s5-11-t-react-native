@@ -43,7 +43,8 @@ const createItem = async (req, res) => {
 
 
     } catch (error) {
-        handleHttpError(res,'ERROR_CREATE_ITEM', 500)
+        // handleHttpError(res,'ERROR_CREATE_ITEM', 500)
+        res.json(error.message)
     }
 }
 
@@ -126,7 +127,9 @@ const updateItem = async (req, res) => {
         })
 
     } catch (error) {
-        handleHttpError(res,'ERROR_UPDATE_ITEM', 500)
+        // handleHttpError(res,'ERROR_UPDATE_ITEM', 500)
+        res.json(error.message)
+
     }
 }
 
