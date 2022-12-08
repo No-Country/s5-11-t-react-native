@@ -7,6 +7,8 @@ import { useNavigation } from '@react-navigation/native';
 const ScrollMenu = ({ data }) => {
   const navigation = useNavigation();
 
+
+  console.log(data, "holaa esta es data" )
   const [items, setItems] = useState([]);
   return (
     <FlatList
@@ -26,11 +28,11 @@ const ScrollMenu = ({ data }) => {
                   });
                 }}
               >
-                <Image style={styles.image} source={{ uri: item.image }} />
+                <Image style={styles.image} source={{ uri: item.item.image }} />
               </TouchableOpacity>
               <View style={styles.containerText}>
-                <Text style={styles.nameText}>{item.name}</Text>
-                <Text style={styles.valueText}>$ {item.price}</Text>
+                <Text style={styles.nameText}>{item.item.name}</Text>
+                <Text style={styles.valueText}>$ {item.item.price}</Text>
               </View>
               <Counter item={item} setItems={setItems} items={items} />
             </View>
