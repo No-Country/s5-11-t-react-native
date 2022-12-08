@@ -21,6 +21,7 @@ const FoodMenu = ({ navigation }) => {
   let chimekYoonIcon = require('../../../assets/FoodMenu/ChimekYoonIcon.png');
 
   const [confirmation, setConfirmation] = useState(false);
+  const [filteredCategories, setFilteredCategories] = useState({});
   const [data, setData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [search, setSearch] = useState('');
@@ -39,7 +40,6 @@ const FoodMenu = ({ navigation }) => {
       const items = await axios.get(API_URL_ITEMS);
       setCategories(category.data);
       setData(items.data);
-      console.log(category.data);
     } catch (error) {}
   };
 
@@ -48,12 +48,12 @@ const FoodMenu = ({ navigation }) => {
       'https://s5-11-t-react-native.up.railway.app/api/categories/';
     try {
       const value = await axios.get(API_URL_CATEG + id);
-      setData(value.data.items);
+      setFilteredCategories(value.data);
     } catch (error) {}
   };
 
-  const searcItem = async (text) => {
-    setSearch(text)
+  const searchItem = async (text) => {
+    setSearch(text);
     const API_URL_ITEM =
       'https://s5-11-t-react-native.up.railway.app/api/item/';
     try {
@@ -66,12 +66,12 @@ const FoodMenu = ({ navigation }) => {
     getItems();
   }, []);
 
-
-
+  useEffect(() => {
+    setData(filteredCategories.category?.items);
+  }, [filteredCategories]);
 
   return (
     <SafeAreaView style={styles.menuContainer}>
-   
       <TouchableOpacity style={styles.hamburgerMenuContainer}>
         <Image source={hamburgerMenu} />
       </TouchableOpacity>
@@ -83,14 +83,12 @@ const FoodMenu = ({ navigation }) => {
       </View>
 
       <TextInput
-       style={styles.textInput}
-       placeholder={textInputDefaultValue}
-       placeholderTextColor={textInputPlaceHolderColor}
-       onChangeText={searcItem}
-       value={search}
+        style={styles.textInput}
+        placeholder={textInputDefaultValue}
+        placeholderTextColor={textInputPlaceHolderColor}
+        onChangeText={searchItem}
+        value={search}
       />
-     
-
       <View style={styles.subTitleContainer}>
         <Text style={styles.subTitle}>Categorías</Text>
       </View>

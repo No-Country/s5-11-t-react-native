@@ -20,7 +20,6 @@ const Counter = ({ item }) => {
       cantidad: valueQuantity,
     };
     agregarProductoCarrito(productoCarrito);
-    console.log(carrito, 'carrito este es');
   }
 
   const onPressPlus = () => {

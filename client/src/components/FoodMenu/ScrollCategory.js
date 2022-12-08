@@ -2,9 +2,7 @@ import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { styles } from './stylesScrollCategory';
 
-const ScrollCategory = ({data,filterInfo }) => {
-  
-
+const ScrollCategory = ({ data, filterInfo }) => {
   return (
     <View style={styles.container}>
       <FlatList
@@ -22,14 +20,11 @@ const ScrollCategory = ({data,filterInfo }) => {
                   ? styles.categoryContainerDark
                   : styles.categoryContainerOrange
               }
-
-              onPress={() => filterInfo(item.id)}
-
-              
+              onPress={() => filterInfo(item._id)}
             >
               <View style={styles.category}>
                 <View style={styles.imageFrame}>
-                  <Image style={styles.image} source={{uri:item.image}} />
+                  <Image style={styles.image} source={{ uri: item.image }} />
                 </View>
                 <View>
                   <Text style={styles.name}>{item.name}</Text>

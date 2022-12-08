@@ -4,11 +4,10 @@ import React, { useState } from 'react';
 import Counter from '../Counter/Counter';
 import { useNavigation } from '@react-navigation/native';
 
-const ScrollMenu = ({data}) => {
+const ScrollMenu = ({ data }) => {
   const navigation = useNavigation();
-  
-  const [items, setItems] = useState([]);
 
+  const [items, setItems] = useState([]);
   return (
     <FlatList
       data={data}
@@ -27,19 +26,13 @@ const ScrollMenu = ({data}) => {
                   });
                 }}
               >
-                <Image style={styles.image} source={{uri:item.image}} />
+                <Image style={styles.image} source={{ uri: item.image }} />
               </TouchableOpacity>
               <View style={styles.containerText}>
                 <Text style={styles.nameText}>{item.name}</Text>
                 <Text style={styles.valueText}>$ {item.price}</Text>
               </View>
               <Counter item={item} setItems={setItems} items={items} />
-              {/* <TouchableOpacity>
-                <Image
-                  style={styles.removeIcon}
-                  source={require('../../../assets/Icons/removeIcon.png')}
-                ></Image>
-              </TouchableOpacity> */}
             </View>
           </View>
         );
