@@ -2,7 +2,7 @@ import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { styles } from './stylesScrollCategory';
 
-const ScrollCategory = () => {
+const ScrollCategory = ({ data, filterInfo }) => {
   const categorias = [
     {
       id: 1,
@@ -53,8 +53,7 @@ const ScrollCategory = () => {
                   ? styles.categoryContainerDark
                   : styles.categoryContainerOrange
               }
-
-              
+              onPress={() => filterInfo(item.id)}
             >
               <View style={styles.category}>
                 <View style={styles.imageFrame}>

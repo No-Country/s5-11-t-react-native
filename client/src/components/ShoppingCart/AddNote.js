@@ -18,7 +18,7 @@ const AddNote = (props) => {
   return (
     <View style={styleContainerAddNote}>
       <TextInput
-        onChange={(value) => setNote(value)}
+        /*onChange={(value) => setNote(value)}*/
         style={styleTextInput}
         placeholder={placeHolder}
         placeholderTextColor={placeholderTextColor}
