@@ -1,18 +1,18 @@
-import { React, useState } from "react";
-import { View, TouchableOpacity, Text, Alert } from "react-native";
-import { useDispatch } from "react-redux";
-import { styles } from "./stylesCounter";
+import { React, useState } from 'react';
+import { View, TouchableOpacity, Text, Alert } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { styles } from './stylesCounter';
 
 const Counter = ({ active, items, setItems, item, setProd }) => {
   const [valueQuantity, setValueQuantity] = useState(0);
 
-  let plus = "+";
-  let minus = "-";
+  let plus = '+';
+  let minus = '-';
 
   const onPressPlus = () => {
     setValueQuantity(valueQuantity + 1);
     setItems([...items, item]);
-    setProd(items);
+    setProd([...items, item]);
   };
 
   const onPressMinus = () => {

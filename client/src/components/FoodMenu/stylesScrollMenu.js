@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     width: 100,
     height: 100,
-    marginRight: '10%',
+    marginRight: '22%',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -65,7 +65,7 @@ export const styles = StyleSheet.create({
   },
   containerTextHorizontal: {
     flexDirection: 'column',
-    width: 100,
+    width: 200,
   },
   containerText: {
     flexDirection: 'column',
@@ -81,14 +81,13 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: '15%',
   },
-  valueText: { 
-    color: '#EB7828', 
-    fontSize: 16 
+  valueText: {
+    color: '#EB7828',
+    fontSize: 16,
   },
 
-  removeIcon:{
-    position:'relative',
-    top:40,
-    right:30,
-  }
+  removeIcon: {
+    position: 'relative',
+    right: 30,
+  },
 });

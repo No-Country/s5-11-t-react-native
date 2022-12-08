@@ -1,16 +1,13 @@
-import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { styles } from "./stylesScrollMenu";
-import React, { useState } from "react";
-import Counter from "../Counter/Counter";
-import { useNavigation } from "@react-navigation/native";
-import { useGetTodosQuery } from "../../features/items/itemSlice";
+import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
+import { styles } from './stylesScrollMenu';
+import React, { useState } from 'react';
+import Counter from '../Counter/Counter';
+import { useNavigation } from '@react-navigation/native';
 
-const ScrollMenu = ({ active, setProd }) => {
+const ScrollMenu = ({ active, setProd, data }) => {
   const navigation = useNavigation();
-  const { data } = useGetTodosQuery();
   const [items, setItems] = useState([]);
 
-  
   return (
     <FlatList
       data={data}
@@ -31,7 +28,7 @@ const ScrollMenu = ({ active, setProd }) => {
               <TouchableOpacity
                 style={active ? styles.imageFrameHorizontal : styles.imageFrame}
                 onPress={() => {
-                  navigation.navigate("ItemDetail");
+                  navigation.navigate('ItemDetail');
                 }}
               >
                 <Image
@@ -51,18 +48,22 @@ const ScrollMenu = ({ active, setProd }) => {
                 </Text>
                 <Text style={styles.valueText}>{item.price}</Text>
               </View>
-              <Counter
-                active={active}
-                item={item}
-                setItems={setItems}
-                items={items}
-                setProd={setProd}
-              />
+              {active ? (
+                ''
+              ) : (
+                <Counter
+                  active={active}
+                  item={item}
+                  setItems={setItems}
+                  items={items}
+                  setProd={setProd}
+                />
+              )}
               {active && (
                 <TouchableOpacity>
                   <Image
                     style={styles.removeIcon}
-                    source={require("../../../assets/Icons/removeIcon.png")}
+                    source={require('../../../assets/Icons/removeIcon.png')}
                   ></Image>
                 </TouchableOpacity>
               )}

@@ -1,17 +1,17 @@
-import { SafeAreaView, Image, View, TextInput, Text } from "react-native";
-import React, { useState } from "react";
-import { styles } from "./styles";
-import ScrollMenu from "../../components/FoodMenu/ScrollMenu";
-import AddNote from "../../components/ShoppingCart/AddNote";
-import TouchableAddNote from "../../components/ShoppingCart/TouchableAddNote";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import FootherBtns from "../../components/ShoppingCart/FootherBtns";
-import ShopingItems from "../../components/ShoppingCart/ShopingItems";
-let chimekYoonIcon = require("../../../assets/FoodMenu/ChimekYoonIcon.png");
-let textInputPlaceHolderColor = "#FFFFFF";
-let textInputDefaultValue = "Añadir una nota";
-let textAddBtn = "Añadir mas";
-let textConfirmBtn = "Confirmar";
+import { SafeAreaView, Image, View, TextInput, Text } from 'react-native';
+import React, { useState } from 'react';
+import { styles } from './styles';
+import ScrollMenu from '../../components/FoodMenu/ScrollMenu';
+import AddNote from '../../components/ShoppingCart/AddNote';
+import TouchableAddNote from '../../components/ShoppingCart/TouchableAddNote';
+import FootherBtns from '../../components/ShoppingCart/FootherBtns';
+import { useSelector } from 'react-redux';
+let chimekYoonIcon = require('../../../assets/FoodMenu/ChimekYoonIcon.png');
+let textInputPlaceHolderColor = '#FFFFFF';
+let textInputDefaultValue = 'Añadir una nota';
+let textAddBtn = 'Añadir mas';
+let textConfirmBtn = 'Confirmar';
+
 const ShoppingCart = () => {
   const [touchAddNote, setTouchAddNote] = useState(false);
   /* si queremos ver lo que estamos escribiendo en la nota */
@@ -19,6 +19,8 @@ const ShoppingCart = () => {
   /* Estado del total del pedido  */
   const [total, setTotal] = useState(null);
   const [confirmation, setConfirmation] = useState(false);
+  const cart = useSelector((state) => state.cart);
+
   const onPressAddNote = () => {
     setTouchAddNote(!touchAddNote);
   };
@@ -41,10 +43,8 @@ const ShoppingCart = () => {
         <View style={styles.containerLogo}>
           <Image style={styles.logo} source={chimekYoonIcon} />
         </View>
-        {/* <ScrollMenu active={true} /> */}
-        <ShopingItems active={true} />
+        <ScrollMenu data={cart} active={true} />
       </>
-
       <View style={styles.containerFootherShoppingCart}>
         {touchAddNote ? (
           <AddNote
