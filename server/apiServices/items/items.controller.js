@@ -104,7 +104,7 @@ const updateItem = async (req, res) => {
 
             const imgFirebase = ref(storage, imgUpload.metadata.name)
 
-            const imgDownload = await getDownloadURL(imgFirebase)
+            const imgDownload = await getUrl(imgFirebase)
             
             imgItem = imgDownload
         }
