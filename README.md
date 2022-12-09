@@ -1,6 +1,4 @@
-# s5-11-t-react-native
-
-[imagTBD]
+# Aplicativo para el restaurante Chimek Yoon.
 
 # Índice
 
@@ -13,11 +11,9 @@
 
 # Descripción
 
-[TBD]
+Este proyecto fue diseñado para atender las necesidades de Chimek Yoon, restarurante de Ecuador.
 
-## Video Promocional
-
-[TBD]
+Además de las funcionalidades estándar de un aplicativo tal, nuestro cliente necesitaba que los pedidos de cada mesa pudieran llegar rápidamente a la cocina, para no perder tiempo. Por ello implementamos la impresión de órdenes en cocina por medio de una impresora térmica.
 
 <a name="tecnologias"></a>
 
@@ -31,7 +27,10 @@
 
 *   **ReactJs** &nbsp; <a href="https://reactjs.org/" rel="nofollow"> <img src="https://cdn.icon-icons.com/icons2/2415/PNG/96/react_original_wordmark_logo_icon_146375.png" alt="reactjs" width="30" height="30" style="max-width: 100%;"> </a>
 
+- React-Native plugin for the bluetooth ESC/POS & TSC printers.
+
 -   **CSS3** &nbsp; <a href="https://www.w3schools.com/css/" rel="nofollow"> <img src="https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_css_icon_130661.png" alt="css3" width="30" height="30" style="max-width: 100%;"> </a>
+
 
 ### **BackEnd**
 
@@ -49,20 +48,24 @@
 
 | Developer               | Rol      | LinkedIn                                             | GitHub - Behance                    |
 | ----------------------- | -------- | ---------------------------------------------------- | ----------------------------------- |
-| Manuel Kloster          | Backend  | https://www.linkedin.com/in/manuel-kloster           | https://github.com/Nekrocow/        |
-| Mauro Arteaga           | Frontend | https://www.linkedin.com/in/mauro-arteaga-754543241/ | https://github.com/Mauroskyer       |
+| Alan Fránquez          | Diseñador  | https://www.linkedin.com/in/alanfranquez/           | https://www.behance.net/AlanFranquez        |
 | Alexander Castañeda     | Frontend | https://www.linkedin.com/in/alexander-castañeda       | https://github.com/iwill88       |
 | Ivan Belasich     | Frontend | https://www.linkedin.com/in/ivanbelasich      | https://github.com/ivanbelasich       |
-| Mauricio Martin Fontana | Frontend | https://www.linkedin.com/in/mauricio-martin-fontana-a9585a58 | https://github.com/peladoo  |
+| Manuel Kloster          | Backend  | https://www.linkedin.com/in/manuel-kloster           | https://github.com/Nekrocow/        |
 | Mario Martinez | Backend | https://www.linkedin.com/in/mario-mtz/ | https://github.com/soymariomtz  |
+| Mauricio Martin Fontana | Frontend | https://www.linkedin.com/in/mauricio-martin-fontana-a9585a58 | https://github.com/peladoo  |
+| Mauro Arteaga           | Frontend | https://www.linkedin.com/in/mauro-arteaga-754543241/ | https://github.com/Mauroskyer       |
 
 
 <a name="deploy"></a>
 
 ## Deploy
 
-[TBD]
+1. Descargar Expo Go desde :
 
-## Documentación
+-   [Android Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent)
+-   [Apple App Store](https://apps.apple.com/es/app/expo-go/id982107779)
 
-[TBD]
+2. Scanneá el QR 👇 , con el scanner que se encuentra al ejecutar Expo Go .
+
+   <img src="https://cdn.discordapp.com/attachments/1038477510628880488/1050641250862243911/chimek.png" alt="expo" width="200" height="200" >
